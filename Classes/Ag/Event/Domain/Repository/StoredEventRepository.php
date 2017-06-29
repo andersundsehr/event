@@ -1,12 +1,13 @@
 <?php
 namespace Ag\Event\Domain\Repository;
 
-use TYPO3\Flow\Annotations as Flow;
+use /** @noinspection PhpUnusedAliasInspection */
+    Neos\Flow\Annotations as Flow;
 
 /**
  * @Flow\Scope("singleton")
  */
-class StoredEventRepository extends \TYPO3\Flow\Persistence\Repository {
+class StoredEventRepository extends \Neos\Flow\Persistence\Repository {
 
 	/**
 	 * @param string $eventId
@@ -22,7 +23,7 @@ class StoredEventRepository extends \TYPO3\Flow\Persistence\Repository {
 	public function getLatestEvent() {
 		$query = $this->createQuery();
 		return $query
-			->setOrderings(array('eventId'=>\TYPO3\Flow\Persistence\QueryInterface::ORDER_DESCENDING))
+			->setOrderings(array('eventId'=>\Neos\Flow\Persistence\QueryInterface::ORDER_DESCENDING))
 			->setLimit(1)
 			->execute()
 			->getFirst();
@@ -38,7 +39,7 @@ class StoredEventRepository extends \TYPO3\Flow\Persistence\Repository {
 		$query = $this->createQuery();
 		return $query
 			->matching($query->greaterThan('eventId',$eventId))
-			->setOrderings(array('eventId'=>\TYPO3\Flow\Persistence\QueryInterface::ORDER_ASCENDING))
+			->setOrderings(array('eventId'=>\Neos\Flow\Persistence\QueryInterface::ORDER_ASCENDING))
 			->setLimit(1)
 			->execute()
 			->getFirst();

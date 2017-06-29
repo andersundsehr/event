@@ -7,13 +7,14 @@ use Ag\Event\Domain\Repository\StoredEventRepository;
 use Ag\Event\EventHandler\EventHandler;
 use Ag\Event\Exception\EventHandlingException;
 use Doctrine\ORM\Event\PostFlushEventArgs;
+use Neos\Flow\ObjectManagement\ObjectManagerInterface;
 use Pheanstalk\Pheanstalk;
 use Pheanstalk\PheanstalkInterface;
-use TYPO3\Flow\Annotations as Flow;
-use TYPO3\Flow\Log\SystemLoggerInterface;
-use TYPO3\Flow\Object\ObjectManagerInterface;
-use TYPO3\Flow\Persistence\PersistenceManagerInterface;
-use TYPO3\Flow\Reflection\ReflectionService;
+use /** @noinspection PhpUnusedAliasInspection */
+    Neos\Flow\Annotations as Flow;
+use Neos\Flow\Log\SystemLoggerInterface;
+use Neos\Flow\Persistence\PersistenceManagerInterface;
+use Neos\Flow\Reflection\ReflectionService;
 
 /**
  * @Flow\Scope("singleton")
@@ -59,7 +60,7 @@ class EventService {
 	protected $pheanstalk;
 
 	/**
-	 * @Flow\Inject(setting="eventHandlers")
+	 * @Flow\InjectConfiguration(setting="eventHandlers")
 	 * @var array
 	 */
 	protected $eventHandlersConfiguration;

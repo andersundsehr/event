@@ -1,8 +1,10 @@
 <?php
 namespace Ag\Event\Domain\Model;
 
-use TYPO3\Flow\Annotations as Flow;
-use Doctrine\ORM\Mapping as ORM;
+use /** @noinspection PhpUnusedAliasInspection */
+    Neos\Flow\Annotations as Flow;
+use /** @noinspection PhpUnusedAliasInspection */
+    Doctrine\ORM\Mapping as ORM;
 
 /**
  * @Flow\Entity
