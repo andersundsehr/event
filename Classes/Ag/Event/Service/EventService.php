@@ -60,7 +60,7 @@ class EventService {
 	protected $pheanstalk;
 
 	/**
-	 * @Flow\InjectConfiguration(setting="eventHandlers")
+	 * @Flow\InjectConfiguration(path="eventHandlers")
 	 * @var array
 	 */
 	protected $eventHandlersConfiguration;

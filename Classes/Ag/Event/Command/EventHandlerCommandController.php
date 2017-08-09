@@ -10,7 +10,7 @@ use Neos\Flow\Cli\CommandController;
 class EventHandlerCommandController extends CommandController {
 
 	/**
-	 * @Flow\InjectConfiguration(setting="eventHandlers")
+	 * @Flow\InjectConfiguration(path="eventHandlers")
 	 * @var array
 	 */
 	protected $eventHandlersConfiguration = array();
